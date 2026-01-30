@@ -28,7 +28,7 @@ source venv/bin/activate
 
 Notez qu’à chaque redémarrage de la carte, l’environnement virtuel `venv` doit être réactivé.
 
-Il ne reste plus qu’à lancer le programme de votre choix. Ici, nous utiliserons `logon.py` qui est notre code le plus abouti. Les autres fichiers dans le repertoire /tests sont des tests effectués tout le long du projet pour s'assurer du bon fonctionnement des LEDs et de la connectivité.
+Il ne reste plus qu’à lancer le programme de votre choix. Ici, nous utiliserons `logon.py` qui est notre code le plus abouti. Il permet d'afficher l'image logo.jpg, le logo Raspberry Pi. Les autres fichiers dans le repertoire /tests sont des tests effectués tout le long du projet pour s'assurer du bon fonctionnement des LEDs et de la connectivité.
 
 ```bash
 python3 logon.py
