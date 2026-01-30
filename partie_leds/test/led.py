@@ -2,7 +2,7 @@ import time
 import board
 import adafruit_dotstar
 # Ceci est un code de test qui allume les 4 bandeaux de leds en les faisant clignonter de plus en plus vite
-NUM_LEDS = 72
+NUM_LEDS = 72 
 #SPi 0
 CLK_PIN0 = board.D11
 DATA_PIN0 = board.D10
