@@ -12,7 +12,7 @@ Rotor :
 - ``couvercle.stl`` fixé à la grande roue. 
 - [courroie](https://www.amazon.fr/sourcing-map-Courroie-distribution-caoutchouc/dp/B0DSR3P59V/ref=sr_1_4?__mk_fr_FR=ÅMÅŽÕÑ&crid=2DVCB6ZJ2Z6N6&dib=eyJ2IjoiMSJ9.INokD1g1XKGq4FjiK4KJ-2DFuZPBLBakq1pM_ikAQQW-i8_wvu6zflLYD9bUancVo1O1l0KUpVF_Tc12299VBfvdVWGJqAfd7dZ5Z0dowRu1OleMIxkBsCXyfrw_BsMGcycEjID_bXYTH-4Jm1so129zpuPP06CmUVDd1TbQXxbmJKklR36qcrfXnCtGEjsZ-37gbQdMV0VhXsDEZqvy0kOxExp_DtmuPP1F3U7picrk7hs-b8qVLdveGdYnYE3JuToG5yF9XXBt19ypSJsxIJoUYEDpVoUJI-cyxjdedZ8.aslACeUXgRTCYPRULSt5mBXesOI6mXxBFWhpa6HJw2Y&dib_tag=se&keywords=courroie+dentée+pas+5+mm+610+mm&qid=1767950807&sprefix=courroie+dentée+pas+5+mm+6010+mm%2Caps%2C284&sr=8-4) pour la transmission. 
 
-### Description du support
+## Description du support
 
 ``main`` est le support principal qui s'attache au trépied. La pièce est sous-dimensionnée volontairement au niveau du trépied afin d'assurer une meilleur stabilité, il est normal qu'il faille forcer légèrement pour la rentrer dans le trépied. 
 Au dos de la pièce il y a un emplacement pour la carte Raspberry Pi qui contrôle le moteur, des emplacements sont prévus pour visser la carte. 
