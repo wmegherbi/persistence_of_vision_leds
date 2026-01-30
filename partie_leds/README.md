@@ -84,9 +84,9 @@ sudo nano /boot/firmware/config.txt
 
 ```ini
 dtoverlay=spi0-1cs
-dtoverlay=spi1-1cs
-dtoverlay=spi3-1cs
+dtoverlay=spi6-1cs
 dtoverlay=spi5-1cs
+dtoverlay=spi3-1cs
 ```
 
 Redémarrer ensuite la carte :
