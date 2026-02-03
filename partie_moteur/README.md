@@ -42,3 +42,52 @@ L’architecture sépare le temps réel GPIO (pigpiod) de la logique et de l’I
 sudo apt update
 sudo apt install pigpio python3-pigpio
 sudo pigpiod
+```
+
+### 2) Installer les dependances Python
+
+```bash
+pip3 install flask pigpio
+```
+
+## Utilisation
+
+Lancer le programme :
+
+```bash
+python3 web3_control.py
+````
+
+Acceder a l'interface web :
+
+```bash
+http://<IP_DU_RASPBERRY>:5000
+````
+
+
+
+## Fonctionnalités
+
+- Slider PWM (1000–2000 µs)
+- Bouton STOP
+
+Affichage :
+- nombre d'impulsions Hall
+- nombre d'aimants par tour
+- vitesse en tr/min
+- visualisation PWM et impulsions '1 tour'
+
+## Fonctionnement interne (résumé)
+
+- Les fronts du capteur Hall sont traités par un callback pigpio (asynchrone)
+- Les données partagées sont protégées par un lock (thread safety)
+- La vitesse est calculée via une fenêtre glissante de timestamps
+- Une impulsion courte (100 µs) est générée sur GPIO27 à chaque tour complet
+- L'IHM est non temps réel et ne perturbe pas la commande
+
+
+## Remarques
+
+- pigpiod doit être lancé avant le script
+
+
