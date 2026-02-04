@@ -8,16 +8,14 @@ Ce projet permet de :
 - générer une impulsion matérielle '1 tour' sur un GPIO
 - superviser le système via une interface web
 
-L’architecture sépare le temps réel GPIO (pigpiod) de la logique et de l’IHM (Python / Flask).
-
 ---
 
 ## Architecture
 
-- pigpiod : gestion temps réel des GPIO (PWM, interruptions, impulsions précises)
-- Python : logique de contrôle et agrégation des données
+- pigpiod : gestion temps réel des GPIO (PWM)
+- Python :  contrôle et géstion des données
 - Flask : serveur web
-- HTML / JavaScript : interface de supervision
+- HTML / JavaScript : interface web
 ---
 
 ## Matériel requis
@@ -79,11 +77,10 @@ Affichage :
 
 ## Fonctionnement interne (résumé)
 
-- Les fronts du capteur Hall sont traités par un callback pigpio (asynchrone)
+- Les fronts du capteur Hall sont traités par un callback pigpio
 - Les données partagées sont protégées par un lock (thread safety)
-- La vitesse est calculée via une fenêtre glissante de timestamps
-- Une impulsion courte (100 µs) est générée sur GPIO27 à chaque tour complet
-- L'IHM est non temps réel et ne perturbe pas la commande
+- La vitesse est calculée via une fenêtre glissante de timestamps de 5 secondes
+- Une impulsion courte (100 µs) est générée sur GPIO27 à chaque tour complet (quand 4 fronts sont déctetés du capteur effet hall)
 
 
 ## Remarques
