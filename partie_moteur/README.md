@@ -40,7 +40,6 @@ Ce projet permet de :
 ```` bash
 partie_moteur/
 ├── web3_control.py    # Cœur du système : contrôle moteur, gestion capteur Hall, API Flask
-├── requirements.txt    # Dépendances Python (flask, pigpio)
 ├── static/
 │   ├── app.js          # Logique front-end (graphiques, interactions)
 │   └── style.css       # Styles de l'interface utilisateur
