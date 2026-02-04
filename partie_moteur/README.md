@@ -60,8 +60,8 @@ partie_moteur/
 
 | GPIO Raspberry Pi | Fonction                     | Détails                                                                 |
 |-------------------|-------------------------------|-------------------------------------------------------------------------|
-| GPIO 18           | Sortie PWM (commande moteur)  | Connecté à l'entrée PWM de l'ESC ou du contrôleur de moteur          |
-| GPIO 17           | Entrée capteur Hall           | Configuré pour détecter les fronts montants/descendants                |
+| GPIO 18           | Sortie PWM (commande moteur)  | Connecté à l'entrée PWM de l'ESC          |
+| GPIO 17           | Entrée capteur Hall           | Configuré pour détecter les fronts             |
 | GPIO 27           | Sortie impulsion "1 tour"     | Génère une impulsion de 100 µs à chaque tour complet du moteur         |
 
 ---
