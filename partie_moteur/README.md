@@ -1,5 +1,7 @@
 # PARTIE MOTEUR
 
+
+
 ## Contrôle moteur et mesure de vitesse par capteur Hall (Raspberry Pi)
 
 Ce projet permet de :
@@ -9,6 +11,21 @@ Ce projet permet de :
 - superviser le système via une interface web
 
 ---
+## Table des matières
+
+1. [Architecture](#architecture)
+2. [Matériel requis](#matériel-requis)
+   - [Connexions GPIO](#connexions-gpio)
+3. [Installation](#installation)
+   - [Installer pigpio](#installer-pigpio)
+   - [Installer les dépendances Python](#2-installer-les-dependances-python)
+4. [Utilisation](#utilisation)
+   - [Lancer le programme](#lancer-le-programme)
+   - [Accéder à l'interface web](#acceder-a-linterface-web)
+5. [Fonctionnalités détaillées](#fonctionnalités)
+6. [Fonctionnement interne](#fonctionnement-interne-résumé)
+7. [Remarques](#remarques)
+
 
 ## Architecture
 
