@@ -37,15 +37,19 @@ Ce projet permet de :
 
 ## Matériel requis
 
-- Raspberry Pi (Raspberry Pi OS / Linux)
-- Capteur Hall
-- Moteur commandé par PWM (ESC)
+### Composants principaux
+- **Raspberry Pi** avec **Raspberry Pi OS** 
+- **Capteur à effet Hall** (ex: US5881, A3144 ou DRV5055) pour la détection des tours
+- **Moteur brushless A2212 930KV** + **ESC 30A** (compatible PWM 50Hz)
+- **Aimants**  à fixer sur roue pour déclencher le capteur Hall
 
 ### Connexions GPIO
 
-- GPIO 18 : PWM moteur
-- GPIO 17 : entrée capteur Hall
-- GPIO 27 : impulsion '1 tour'
+| GPIO Raspberry Pi | Fonction                     | Détails                                                                 |
+|-------------------|-------------------------------|-------------------------------------------------------------------------|
+| GPIO 18           | Sortie PWM (commande moteur)  | Connecté à l'entrée PWM de l'ESC ou du contrôleur de moteur          |
+| GPIO 17           | Entrée capteur Hall           | Configuré pour détecter les fronts montants/descendants                |
+| GPIO 27           | Sortie impulsion "1 tour"     | Génère une impulsion de 100 µs à chaque tour complet du moteur         |
 
 ---
 
@@ -67,13 +71,13 @@ pip3 install flask pigpio
 
 ## Utilisation
 
-Lancer le programme :
+### Lancer le programme :
 
 ```bash
 python3 web3_control.py
 ````
 
-Acceder a l'interface web :
+### Accéder à l'interface web :
 
 ```bash
 http://<IP_DU_RASPBERRY>:5000
@@ -103,5 +107,9 @@ Affichage :
 ## Remarques
 
 - pigpiod doit être lancé avant le script
+``` bash
+sudo pigpiod
+```
+
 
 
