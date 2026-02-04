@@ -10,7 +10,7 @@ Ce projet permet de :
 - générer une impulsion matérielle '1 tour' sur un GPIO
 - superviser le système via une interface web
 
-![Interface de contrôle](images.png)
+![Interface de contrôle](image.png)
 
 
 ---
