@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contrôle moteur & capteur Hall</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script>
+        window.__INITIAL_PWM__ = {{ value | default(1500) }};
+        window.__INITIAL_HALL_COUNT__ = {{ hall_count | default(0) }};
+        window.__INITIAL_MAGNETS__ = {{ magnets_per_rev | default(1) }};
+    </script>
+    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Contrôle moteur et mesure Hall</h1>
+    </header>
+
+    <div class="layout">
+        <div class="panel">
+            <div class="panel-title">Commande PWM (50 Hz)</div>
+
+            <input id="pwmRange" type="range" min="1000" max="2000" value="{{ value }}">
+            <div class="value section">PWM: <span id="val">{{ value }}</span> us</div>
+            <div class="muted">Commande directe du moteur (servo PWM).</div>
+
+            <canvas id="pwmCanvas"></canvas>
+
+            <form action="/stop" method="post" class="section">
+                <button class="stop">STOP</button>
+            </form>
+        </div>
+
+        <div class="panel" id="hall">
+            <div class="panel-title">Mesure capteur Hall</div>
+            <div class="value section">Impulsions : <span id="hall-count">{{ hall_count }}</span></div>
+            <div class="stats section">
+                Aimants/tour : <span id="magnets">{{ magnets_per_rev }}</span><br>
+                Vitesse : <span id="rpm">0</span> tr/min
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Pulses GPIO 27</div>
+            <div class="muted">Impulsions envoyées sur GPIO27 (fenêtre 5 s).</div>
+            <canvas id="pulseCanvas"></canvas>
+        </div>
+    </div>
+</body>
+</html>
