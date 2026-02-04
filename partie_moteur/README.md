@@ -10,6 +10,8 @@ Ce projet permet de :
 - générer une impulsion matérielle '1 tour' sur un GPIO
 - superviser le système via une interface web
 
+![Uploading image.png…]()
+
 ---
 ## Table des matières
 
@@ -33,6 +35,17 @@ Ce projet permet de :
 - Python :  contrôle et géstion des données
 - Flask : serveur web
 - HTML / JavaScript : interface web
+
+```` bash
+partie_moteur/
+├── web3_control.py    # Cœur du système : contrôle moteur, gestion capteur Hall, API Flask
+├── requirements.txt    # Dépendances Python (flask, pigpio)
+├── static/
+│   ├── app.js          # Logique front-end (graphiques, interactions)
+│   └── style.css       # Styles de l'interface utilisateur
+└── templates/
+    └── index.html      # Template HTML principal (interface de contrôle)
+````
 ---
 
 ## Matériel requis
@@ -102,6 +115,21 @@ Affichage :
 - Les données partagées sont protégées par un lock (thread safety)
 - La vitesse est calculée via une fenêtre glissante de timestamps de 5 secondes
 - Une impulsion courte (100 µs) est générée sur GPIO27 à chaque tour complet (quand 4 fronts sont déctetés du capteur effet hall)
+
+### Flux de Données
+1. **Capteur Hall → Raspberry Pi** :
+   - Détection des fronts via `pigpio.callback()` (dans `web3_control.py`)
+   - Stockage des timestamps dans `edge_times[]`
+
+2. **Raspberry Pi → Interface Web** :
+   - Données exposées via les endpoints Flask :
+     - `/api/hall` (compteur, RPM)
+     - `/api/pulse` (timestamps des impulsions)
+   - Mise à jour en temps réel via JavaScript (`static/app.js`)
+
+3. **Interface Web → Moteur** :
+   - Contrôle PWM via le slider (POST sur `/set_live`)
+   - Arrêt d'urgence (POST sur `/stop`)
 
 
 ## Remarques
